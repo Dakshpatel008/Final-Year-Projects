@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vocal For Local</title>
+		<link rel="stylesheet" href="{% static '/css/seller-dashboard.css' %}" />
+
+        <script
+        type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement(
+                    { pageLanguage: "en" },
+                    "google_translate_element"
+                );
+            }
+        </script>
+	</head>
+	<body>        
+		<nav id="navbar">
+			<div class="logo" href="#">VOCAL FOR LOCAL</div>
+			
+            <ul>             
+                <li>
+                    <form class="logout-link" action="/logout/" method="POST">
+                      {% csrf_token %}
+
+                        <button class="logout" type="submit">
+                            LOGOUT
+                        </button>
+
+                    </form>
+                    
+                  </li>
+                  <li><div id="google_translate_element" class="translate"></div></li>
+            </ul>
+            
+        </nav>    
+        <div class="shop-info">        
+            <div class="heading">
+                <div class="name">{{ name }}</div>
+                <div class="stars">
+                    <img src="{% static 'images/star.svg' %}" alt="star" class="star">
+                    <img src="{% static 'images/star.svg' %}" alt="star" class="star">
+                    <img src="{% static 'images/star.svg' %}" alt="star" class="star">
+                    <img src="{% static 'images/star.svg' %}" alt="star" class="star">
+                    <img src="{% static 'images/star.svg' %}" alt="star" class="star">
+                </div>
+            </div>
+            <div class="second-part">
+                <div class="left-part">
+                    <div class="category">{{ category }}</div>                
+                    <div class="owner-name">Owned By - {{ owner }}</div>                   
+                    <div class="contact">Call on: 
+                        <span class="attr">
+                            {{ phone }}
+                        </span>
+                    </div>
+                    <div class="address">
+                        <div class="address1">
+                            Address:
+                            <span class="attr">
+                                {{ address }}
+                            </span>
+                        </div>        
+                    </div>   
+                    
+                    <div class="shop-timings">
+                        TIMINGS: 
+                        <span class="attr">
+                            {{ time }}
+                        </span>
+                    </div>
+                </div>                
+                <div class="right-part">
+                    <div class="tags">
+                        {% for tag in tags %}
+                        <div class="tag">{{tag.name}}</div>
+                        {% endfor %}
+                    </div>
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <input type="text" name="tag">
+                        <button class="add-tag" type="submit"> ADD TAG</button>
+                    </form>
+                    <button class="vaccancy"><a href="#"> POST VACCANCY</a></button>                
+                </div>
+            </div>        
+    </body>
+</html>
