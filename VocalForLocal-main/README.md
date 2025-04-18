@@ -93,7 +93,7 @@ git push origin <branch-name>
 ## _Authors_
 
 Meet the team.
-
+ 
 - Parinda Pranami
   - [LinkedIn](https://www.linkedin.com/in/parinda-pranami-13943b1aa/) | [Twitter](https://twitter.com/parindda_)
 - Rishika Lulla
@@ -102,3 +102,4 @@ Meet the team.
   - [LinkedIn](https://www.linkedin.com/in/viveknamaye/)
 - Tushar Nankani
   - [LinkedIn](https://www.linkedin.com/in/tusharnankani/) | [Twitter](https://twitter.com/tusharnankanii)
+- Daksh Patel
